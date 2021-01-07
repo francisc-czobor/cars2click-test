@@ -17,3 +17,8 @@ class BrandSpider(scrapy.Spider):
                 'address': dealer.css('.legende').get().split('</div>')[1].replace('\n', '').replace('\t', '').replace('<br>', ' ').strip(),
                 'tel': dealer.css('.buttons a::attr(href)').get().split(':')[1],
             }
+
+        next_page = response.css('.pagination a[rel=next]::attr(href)').get()
+        if next_page is not None:
+            next_page = response.urljoin(next_page)
+            yield scrapy.Request(next_page, callback=self.parse_item)
