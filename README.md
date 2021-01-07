@@ -2,7 +2,7 @@
 
 This app was written during the cars2click recruitment process.
 
-Its purpose is to scrape the car dealership data from [this](https://www.auto-concession.fr/) website. The output format is a JSON file containing a list of data points with the following format:
+Its purpose is to scrape the car dealership data from [this](https://www.auto-concession.fr/) website. The output is a JSON file containing a list of data points with the following format:
 ```json
   {
     "brand": "Car Brand",
